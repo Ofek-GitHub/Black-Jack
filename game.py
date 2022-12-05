@@ -105,9 +105,15 @@ class Game:
             print("You tie. Your bet has been returned.")
 
     def confirm_start(self):
-        answer = input(
-            f"You are starting with ${self.player.balance}, would you like to play? ").lower()
-        return answer in ['y', 'yes', 'start']
+        check = True
+        while check == True:
+         answer = input(f"You are starting with ${self.player.balance}, would you like to play? ").lower()
+         if answer in ['y', 'yes', 'start', 'no']:
+             check = False
+             return answer
+         else:
+            print("invalid answer")
+        
 
     def start_round(self):
         self.place_bet()
@@ -132,7 +138,7 @@ class Game:
 
     def start_game(self):
         while self.player.balance > 0:
-            if not self.confirm_start():
+            if self.confirm_start() == "no":
                 print(f"You left the game with ${self.player.balance}.")
                 break
 
