@@ -4,7 +4,7 @@ from card import Card
 class Deck:
     def __init__(self):
         self.cards = []
-        self.create.deck()          # this is the deck constructor and the constructor attributes.
+        self.create_deck()          # this is the deck constructor and the constructor attributes.
         self.shuffle()
         
     def shuffle(self):
@@ -17,7 +17,7 @@ class Deck:
                 self.cards.append(new_card) #   creating a deck that contains 52 cards, meaning it will go 4 loops of suits and then 13 kinds of cards.
     def deal(self, num_of_cards):
         
-        dealt_cards = [] # the number of cards to deal. # num of cards is eqaul to 52, obviously.
+        dealt_cards = [] # the number of cards to deal. # num of cards is equal to 52, obviously.
         
         for i in range(num_of_cards):
             top_card = self.cards.pop() # the top card is the last in the array, we will pop since we dont want him in the deck no more.

@@ -12,10 +12,10 @@ class Game:
         
     def place_bet(self):
         while True:
-            bet = float(input("Please place a bet"))
+            bet = float(input("Please place a bet: "))
             
             if bet < self.minimum_bet:
-                print("This amount is too low, the minimum_bet is 1 dollar.")
+                print("This amount is too low, the minimum bet is 1 dollar.")
             elif bet > self.player.balance:
                 print("The bet is higher then the player balance, please place the current bet.")
             else:
@@ -25,7 +25,7 @@ class Game:
     
     def player_hit_or_stay(self):
         while True: 
-            hit_or_stay = input("would you like to hit or stay?").lower()
+            hit_or_stay = input("would you like to hit or stay? ").lower()
             
             if hit_or_stay in ["hit", "stay"]:
                 break
